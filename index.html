@@ -8,7 +8,7 @@
   <title>wicks.pictures</title>
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"> -->
   <link rel="stylesheet" href="assets/css/fontawesome.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
 
@@ -17,35 +17,33 @@
 <body>
 
   <header>
-    <h2><a href="#">Website Logo</a></h2>
+    <!-- <h2><a href="#">Website Logo</a></h2> -->
     <nav>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Products</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contacts</a></li>
+      <li><a href="#" id="tripsNavItem">Trips</a></li>
+      <li><a href="#" id="littleOnesNavItem">Little One</a></li>
     </nav>
   </header>
 
 
-  <section class="hero">
-    <!-- <div class="background-image" style="background-image: url(assets/img/hero.jpg);"></div> -->
-    <h1>Hi honey, feel better, love you.</h1>
-    <h3>you're cute.</h3>
+  <section class="picturebg" id="tripsSection">
+    <div class="background-image" style="background-image: url(assets/images/oasis.jpg);"></div>
+    <h1>across Canada...</h1>
   </section>
 
 
-  <section class="our-work">
-    <h3 class="title">Some Title</h3>
+  <section class="picturebg" id="littleOnesSection">
+    <div class="background-image" style="background-image: url(assets/images/misty_mountains.jpg);"></div>
+    <h3 class="title">Little One</h3>
     <p>Some Text</p>
     <hr>
-
-    <ul class="grid">
+    <!-- <ul class="grid"> -->
       <!-- <li class="small" style="background-image: url(assets/img/coast.jpg);"></li>			 -->
-      </div>
+    <!-- </ul> -->
+    </div>
   </section>
 
 
-  <section class="features">
+  <!-- <section class="features">
     <h3 class="title">Features and services</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id felis et ipsum bibendum ultrices. Morbi vitae pulvinar velit. Sed aliquam dictum sapien, id sagittis augue malesuada eu.</p>
     <hr>
@@ -67,33 +65,62 @@
         <p>some text 3</p>
       </li>
       </div>
-  </section>
+  </section> -->
 
 
-  <section class="reviews">
+  <!-- <section class="reviews">
     <h3 class="title">What others say:</h3>
 
     <p class="quote">some text</p>
     <p class="author"></p>
-  </section>
+  </section> -->
 
 
-  <section class="contact">
+  <!-- <section class="contact">
     <h3 class="title">Join our newsletter</h3>
     <p>some text</p>
     <hr>
-  </section>
+  </section> -->
 
   <footer>
     <ul>
-      <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
+      <!-- <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
       <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
       <li><a href="#"><i class="fa fa-snapchat-square"></i></a></li>
       <li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>
-      <li><a href="#"><i class="fa fa-github-square"></i></a></li>
+      <li><a href="#"><i class="fa fa-github-square"></i></a></li> -->
     </ul>
   </footer>
 
 </body>
+<script>
+  function animate(elem, time) {
+    if (!elem) return;
+    var to = elem.offsetTop;
+    var from = window.scrollY;
+    var start = new Date().getTime(),
+      timer = setInterval(function() {
+        var step = Math.min(1, (new Date().getTime() - start) / time);
+        window.scrollTo(0, (from + step * (to - from)) + 1);
+        if (step == 1) {
+          clearInterval(timer);
+        };
+      }, 25);
+    window.scrollTo(0, (from + 1));
+  }
+
+  function scrollToMyEleID(id) {
+    animate(document.getElementById(id), 150);
+  }
+
+  document.getElementById('tripsNavItem').addEventListener("click", function() {
+    scrollToMyEleID('tripsSection');
+  });
+  document.getElementById('littleOnesNavItem').addEventListener("click", function() {
+    scrollToMyEleID('littleOnesSection');
+  });
+</script>
+<script>
+</script>
 
 </html>

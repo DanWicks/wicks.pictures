@@ -71,13 +71,15 @@ section{
 }
 
 section h3.title{
-	color: #414a4f;
+	color: #white;
 	text-transform: capitalize;
 	font: bold 32px 'Open Sans', sans-serif;
 	margin-bottom: 35px;
 	text-align: center;
 }
-
+.background-image > .title {
+	color: white;
+}
 section p{
 	max-width: 800px;
 	text-align: center;
@@ -153,19 +155,19 @@ header nav li:last-child{
 
 
 /*----------------
- 	Hero Section
+ 	picturebg Section
 ----------------*/
 
-.hero{
+.picturebg{
 	position: relative;
 	justify-content: center;
 	min-height: 100vh;
 	color: #fff;
 	text-align: center;
-	color: black;
+	/* color: black; */
 }
 
-.hero .background-image{
+.picturebg .background-image{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -174,9 +176,10 @@ header nav li:last-child{
 	background-size: cover;
 	background-color: #2196F3;
 	z-index: -1;
+	color: white;
 }
 
-.hero .background-image:after{
+.background-image:after{
 	content: '';
 	position: absolute;
 	top: 0;
@@ -187,35 +190,35 @@ header nav li:last-child{
 	opacity: 0.75;
 }
 
-.hero h1{
+.picturebg h1{
 	font: bold 60px 'Open Sans', sans-serif;
 	margin-bottom: 15px;
 }
 
-.hero h3{
+.picturebg h3{
 	font: normal 28px 'Open Sans', sans-serif;
 	margin-bottom: 40px;
 }
 
-.hero a.btn{
+.picturebg a.btn{
 	padding: 20px 46px;
 }
 
 @media (max-width: 800px){
 
-	.hero{
+	.picturebg{
 		min-height: 600px;
 	}
 
-	.hero h1{
+	.picturebg h1{
 		font-size: 48px;
 	}
 
-	.hero h3{
+	.picturebg h3{
 		font-size: 24px;
 	}
 
-	.hero a.btn{
+	.picturebg a.btn{
 		padding: 15px 40px;
 	}
 
